@@ -1,7 +1,7 @@
-######################################################################################################
-### phenoselection, R script implementing phenotypic selection gradients from Lande & Arnold 1983  ###
-######################################################################################################
-#######################           by Moises Exposito-Alonso        ###################################
+################################################################################
+##### R script implementing selection gradients from Lande & Arnold 1983  ######
+###################           by Moises Exposito-Alonso        #################
+################################################################################
 
 This script is free to use and share, but come with no warrante.
 
