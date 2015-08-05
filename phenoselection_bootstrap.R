@@ -6,15 +6,22 @@
 # Phenotypic selection gradients from Lande and Arnold 1985.
 # Includes bootstrap evaluation of significance
 
-####@@@@@@@ INPUT DATA TO BE PROVIDED  @@@@@@@#####
+#@@@@@@@ (1) INPUT DATA TO BE PROVIDED  @@@@@@@#
 
 Var1="vector of numerical values of phenotype 1"
 Var2="vector of numerical values of phenotype 2"  # notice that the results will be reported in the same order as these two variables
 Fitness= "vector of numerical values of fitness"
 Gmatrix=matrix(c(heritabilty1,correlation,correlation, heritability2,ncol=2)
 
-####@@@@@@@ LITTLE BIT TO RUN YOU ANALYSES  @@@@@@@#####
+#@@@@@@@ (2) LITTLE COMMAND TO DO THE ANALYSES, but first run (3)   @@@@@@@#
 
+PHENOSELECTION(Var1=Var1,Var2=Var2,Fitness=Fitness,Gmatrix=Gmatrix)
+
+## 
+
+
+
+#@@@@@@@ (3) RUN ALL DOWN HERE BEFORE (2)  ##### 
 PHENOSELECTION<-function(Var1,Var2,Fitness,Gmatrix=NULL){
 library(boot)
 if (Gmatrix==NULL){
