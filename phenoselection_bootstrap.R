@@ -6,30 +6,24 @@
 # Phenotypic selection gradients from Lande and Arnold 1985.
 # Includes bootstrap evaluation of significance
 
-#@@@@@@@ (1) INPUT DATA TO BE PROVIDED  @@@@@@@#
+# (1) @@@@@@@  INPUT DATA TO BE PROVIDED  @@@@@@@#
 
 Var1="vector of numerical values of phenotype 1"
 Var2="vector of numerical values of phenotype 2"  # notice that the results will be reported in the same order as these two variables
 Fitness= "vector of numerical values of fitness"
 Gmatrix=matrix(c(heritabilty1,correlation,correlation, heritability2,ncol=2)
 
-#@@@@@@@ (2) LITTLE COMMAND TO DO THE ANALYSES, but first run (3)   @@@@@@@#
+# (2) @@@@@@@ THIS IS THE FINAL COMMAND TO DO ALL THE ANALYSES, BUT FIRST RUN ALL FUNCTIONS IN (3)  @@@@@@@#
 
 PHENOSELECTION(Var1=Var1,Var2=Var2,Fitness=Fitness,Gmatrix=Gmatrix)
 
-## 
 
+# (3) @@@@@@@  RUN ALL THE SCRIPT DOWN HERE BEFORE (2)  ##### 
 
+#### master function
 
-#@@@@@@@ (3) RUN ALL DOWN HERE BEFORE (2)  ##### 
 PHENOSELECTION<-function(Var1,Var2,Fitness,Gmatrix=NULL){
 library(boot)
-if (Gmatrix==NULL){
-print "Heritabilities not provided, only selection analyses carried out" }
-
-d1<-preparedata(Fitness,Var1,Var2)
-
-
 
 ################################# start inside functions #############################
 #### prepare data
@@ -224,8 +218,27 @@ extractbootstrap_numeric<-function(bootstrapresults){
 }
 
 ################################# end inside functions #############################
-
 #@@@@@@ start LITTLE BIT THAT ACTUALLY DO ANALYSES  @@@@@@@#
+
+d1<-preparedata(Fitness,Var1,Var2)
+
+
+if (Gmatrix==NULL){
+print ("Heritabilities not provided, only selection analyses reported" )  
+
+result_gradient_linear<- boot(data=d1, statistic=gradientlinear, R=1000)
+result_gradient_quadratic<- boot(data=d1, statistic=gradientquadratic, R=1000)
+result_coefficient_linear<- boot(data=d1, statistic=coeflinear, R=1000)
+result_coefficient_quadratic<- boot(data=d1, statistic=coefquadratic, R=1000)
+
+resa<-extractbootstrap(result_gradient_linear)
+resb<-extractbootstrap(result_gradient_quadratic)
+resc<-extractbootstrap(result_coefficient_linear)
+resd<-extractbootstrap(result_coefficient_quadratic)
+}
+
+if (Gmatrix!=NULL){
+print (" Heritabilities provided, selection gradients and response to selection analyses reported" )
 
 result_gradient_linear<- boot(data=d1, statistic=gradientlinear, R=1000)
 result_gradient_quadratic<- boot(data=d1, statistic=gradientquadratic, R=1000)
@@ -237,9 +250,6 @@ resb<-extractbootstrap(result_gradient_quadratic)
 resc<-extractbootstrap(result_coefficient_linear)
 resd<-extractbootstrap(result_coefficient_quadratic)
 
-
-
-if (Gmatrix!=NULL){
 result_response_linear<- boot(data=d1, statistic=responselinear, R=1000)
 result_response_quadratic<- boot(data=d1, statistic=responsequadratic, R=1000)
 result_response_quadratic_gmatrix<- boot(data=d1, statistic=responsequadratic_gmatrix, R=1000)
@@ -254,13 +264,12 @@ response_linear=rese,
 response_quadratic_Vpheno=resf,
 response_quadratic_Vaddit=resg)
 
-} else{
+} 
+#@@@@@@ end LITTLE BIT THAT ACTUALLY DO ANALYSES  @@@@@@@#
+
 analysislist<-list(gradient_linear=resa,gradient_quadratic=resb,
 coefficient_linear=resc,coefficient_quadratic=resd)
 
-}
-
 return(analysislist)
-#@@@@@@ end LITTLE BIT THAT ACTUALLY DO ANALYSES  @@@@@@@#
 
 } # end phenoselection
