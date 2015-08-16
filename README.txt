@@ -6,6 +6,8 @@
 
 This script is free to use, modify and share, but it comes with no warranty.
 
+It is the code used in Exposito-Alonso et al. (2015), so it is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
+
 In total, there are seven equations implemented which deal with linear, disruptive, blancing and correlative selection, and, if heritabilities and genetic correlations are provided, response to selection is calculated. 
 
 Specifically from the paper of Lande & Arnold 1983, linear gradients and coefficients are implementations of the equation 4 and 6c. Response to selection is the implementation of equation 6b. Quadratic coefficients and gradients are implementations of the equations 13b and 14a, respectively. To infer changes in phenotypic variance and additive variances due to disruptive or balancing selection, equations 15a and 12. 
@@ -18,6 +20,8 @@ Additionally, there is a step previos to calculation of gradients that is normal
 
 
 See cited papers:
+
+Exposito-Alonso, M., Brennan, A., Alonso-Blanco, C., Picó, F.X. 2015. Spatio-temporal heterogeneity of natural selection in the wild: a multiple field experimental approach towards understanding life history adaptation of Arabidopsis thaliana. (to be submitted) 
 
 Lande, R., and S. J. Arnold. 1983. The measurement of selection on correlated characters. Evolution (N. Y). 37:1210–1226.
 
