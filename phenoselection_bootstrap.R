@@ -223,7 +223,7 @@ extractbootstrap_numeric<-function(bootstrapresults){
 d1<-preparedata(Fitness,Var1,Var2)
 
 
-if (Gmatrix==NULL){
+if (is.null(Gmatrix)==T){
 print ("Heritabilities not provided, only selection analyses reported" )  
 
 result_gradient_linear<- boot(data=d1, statistic=gradientlinear, R=1000)
@@ -237,7 +237,7 @@ resc<-extractbootstrap(result_coefficient_linear)
 resd<-extractbootstrap(result_coefficient_quadratic)
 }
 
-if (Gmatrix!=NULL){
+if (is.null(Gmatrix)==F){
 print (" Heritabilities provided, selection gradients and response to selection analyses reported" )
 
 result_gradient_linear<- boot(data=d1, statistic=gradientlinear, R=1000)
