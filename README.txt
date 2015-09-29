@@ -12,7 +12,7 @@ In total, there are seven equations implemented which deal with linear, disrupti
 
 Specifically from the paper of Lande & Arnold 1983, linear gradients and coefficients are implementations of the equation 4 and 6c. Response to selection is the implementation of equation 6b. Quadratic coefficients and gradients are implementations of the equations 13b and 14a, respectively. To infer changes in phenotypic variance and additive variances due to disruptive or balancing selection, equations 15a and 12. 
 
-This script handles missing values by removing them, then only complete information is used. If specific treatments of missing values are required, for instance inputing from mean or including and indicator variable to treat it as "invisible fraction" (Moorad and Wade 2013). Whatever the transformation or inputation technique is, it must be done prior to the analyses by the user. 
+This script handles missing values by removing them, then only complete information is used. If specific treatments of missing values are required, for instance inputing from mean or including and indicator variable to treat it as "invisible fraction" (Moorad and Wade 2013), sit must be done prior to the analyses by the user. 
 
 Additionally, there is a step previos to calculation of gradients that is normalization of phenotypes, substracting mean and deviding by standard deviation. This allows to compute variance standarized selection gradients wich express the gain in fitnes by standard deviation of phenotypes, something that allows comparisons across phenotypes and with other studies (Kingsolver et al. 2001). Regarding fitness, equations also transforme it to relative fitness.
 
