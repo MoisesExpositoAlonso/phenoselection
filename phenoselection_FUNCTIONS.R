@@ -1,32 +1,9 @@
-######################################################################################################
-### phenoselection, R script implementing phenotypic selection gradients from Lande & Arnold 1983  ###
-######################################################################################################
-#######################           by Moises Exposito-Alonso        ###################################
-
-# Phenotypic selection gradients from Lande and Arnold 1985.
-# Includes bootstrap evaluation of significance
-
-# (1) @@@@@@@  INPUT DATA TO BE PROVIDED  @@@@@@@#
-
-Var1="vector of numerical values of phenotype 1"
-Var2="vector of numerical values of phenotype 2"  # notice that the results will be reported in the same order as these two variables
-Fitness= "vector of numerical values of fitness"
-Gmatrix=matrix(c(heritabilty1,correlation,correlation, heritability2,ncol=2)
-
-# (2) @@@@@@@ THIS IS THE FINAL COMMAND TO DO ALL THE ANALYSES, BUT FIRST RUN ALL FUNCTIONS IN (3)  @@@@@@@#
-
-PHENOSELECTION(Var1=Var1,Var2=Var2,Fitness=Fitness,Gmatrix=Gmatrix)
-
-
-# (3) @@@@@@@  RUN ALL THE SCRIPT DOWN HERE BEFORE (2)  ##### 
-
 #### master function
 
 PHENOSELECTION<-function(Var1,Var2,Fitness,Gmatrix=NULL){
 library(boot)
 
-################################# start inside functions #############################
-#### prepare data
+# prepare data function
 
 preparedata<-function(Fitness,Var1,Var2){
 data<-data.frame(Fitness=as.numeric(Fitness),
@@ -43,8 +20,7 @@ d1$Var2<-scale(d1$Var2)
 return(d1)
 }
 
-#### functions from Lande & Arnold 1983 with bootstrap significance ####
-
+# functions from Lande & Arnold 1983 with bootstrap significance 
 
 gradientlinear<- function(data, indices) {
   d1 <- data[indices,] 
@@ -217,8 +193,8 @@ extractbootstrap_numeric<-function(bootstrapresults){
   return(extracted)
 }
 
-################################# end inside functions #############################
-#@@@@@@ start LITTLE BIT THAT ACTUALLY DO ANALYSES  @@@@@@@#
+
+#@ start LITTLE BIT THAT ACTUALLY DO ANALYSES @#
 
 d1<-preparedata(Fitness,Var1,Var2)
 
@@ -265,7 +241,7 @@ response_quadratic_Vpheno=resf,
 response_quadratic_Vaddit=resg)
 
 } 
-#@@@@@@ end LITTLE BIT THAT ACTUALLY DO ANALYSES  @@@@@@@#
+#@ end LITTLE BIT THAT ACTUALLY DO ANALYSES @#
 
 analysislist<-list(gradient_linear=resa,gradient_quadratic=resb,
 coefficient_linear=resc,coefficient_quadratic=resd)

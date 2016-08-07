@@ -1,12 +1,13 @@
 ##########################################################################################
 ##### R script implementing bivariate selection gradients from Lande & Arnold 1983  ######
 ##########################################################################################
-###################      by Moises Exposito-Alonso           #############################
+###############         by Moises Exposito-Alonso            #############################
+###############      moisesexpositoalonso@gmail.com          #############################
 ##########################################################################################
 
-This script is free to use, modify and share, but it comes with no warranty.
+This script is free to use, modify and share, but it comes with no warranty. Emails with bugs or questions are wellcomed.
 
-It is the code used in Exposito-Alonso et al. (2016). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
+This code was used for the analyses in Exposito-Alonso et al. (2016). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
 
 In total, there are seven equations implemented dealing with linear, disruptive, blancing and correlative selection, and, if heritabilities and genetic correlations are provided, response to selection is calculated. 
 
@@ -18,7 +19,7 @@ Additionally, we recommend to do a step prior to the calculation of gradients, n
 
 Bibliography
 
-Exposito-Alonso, M., Brennan, A., Alonso-Blanco, C., Picó, F.X. 2016. Spatio-temporal heterogeneity of natural selection in the wild: a multiple field experimental approach towards understanding life history adaptation of Arabidopsis thaliana. (to be submitted) 
+Exposito-Alonso, M., Brennan, A., Alonso-Blanco, C., Picó, F.X. 201X. Local and temporal adaptation of life history in Arabidopsis thalianan. (to be submitted) 
 
 Lande, R., and S. J. Arnold. 1983. The measurement of selection on correlated characters. Evolution (N. Y). 37:1210–1226.
 
