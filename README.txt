@@ -5,7 +5,7 @@
 ###############      moisesexpositoalonso@gmail.com          #############################
 ##########################################################################################
 
-This script is free to use, modify and share, as long as this repo is acknowledged. It comes with no warranty, however, emails with bugs or questions are wellcomed.
+These scripts are free to use, modify and share, as long as this repo is acknowledged. It comes with no warranty, however, emails with bugs or questions are wellcomed.
 
 This code was used for the analyses in Exposito-Alonso et al. (201X). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
 
