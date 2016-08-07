@@ -5,17 +5,17 @@
 ###############      moisesexpositoalonso@gmail.com          #############################
 ##########################################################################################
 
-This script is free to use, modify and share, but it comes with no warranty. Emails with bugs or questions are wellcomed.
+This script is free to use, modify and share, as long as this repo is acknowledged. It comes with no warranty, however, emails with bugs or questions are wellcomed.
 
-This code was used for the analyses in Exposito-Alonso et al. (2016). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
+This code was used for the analyses in Exposito-Alonso et al. (201X). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
 
-In total, there are seven equations implemented dealing with linear, disruptive, blancing and correlative selection, and, if heritabilities and genetic correlations are provided, response to selection is calculated. 
+In total, there are seven equations implemented dealing with linear, disruptive, blancing and correlative selection, and, if heritabilities and genetic correlations are provided, response to selection is calculated. Significance values are calculated using bootstrapping.
 
-Specifically from the paper of Lande & Arnold 1983, linear gradients and coefficients are implementations of the equation 4 and 6c. Response to selection is the implementation of equation 6b. Quadratic coefficients and gradients are implementations of the equations 13b and 14a, respectively. To infer changes in phenotypic variance and additive variances due to disruptive or balancing selection, equations 15a and 12. 
+Specifically, the equations from the paper of Lande & Arnold 1983 are: Equation 4 and 6c for linear gradients and coefficients. Equation 6b for response to selection. Equations 13b and 14a for quadratic coefficients and gradients, respectively. Equations 15a and 12 are used to infer changes in phenotypic variance and additive variances due to disruptive or balancing selection. 
 
-This script handles missing values by removing them, then only complete information is used. If specific treatments of missing values are required, for instance inputing from mean or including and indicator variable to treat it as "invisible fraction" (Moorad and Wade 2013), it must be done prior to the analyses by the user. 
+This script handles missing values by removing them. Only complete information is used. If specific treatments of missing values are required, e.g. inputing from mean or dummy variable to infer the "invisible fraction" (Moorad and Wade 2013), those must be done prior to the analyses using my scripts. 
 
-Additionally, we recommend to do a step prior to the calculation of gradients, normalization of phenotypes, i.e. substracting mean and deviding by standard deviation. This allows to compute variance standarized selection gradients wich express the gain in fitnes by standard deviation units of phenotypes, something that allows comparisons across phenotypes and with other studies (Kingsolver et al. 2001). Since fitness should always be transformed to relative fitness, it is already implemented in the scripts.
+Additionally, I recommend to do a prior step before the calculation of gradients, normalization of phenotypes (substracting mean and deviding by standard deviation). This allows to compute variance standarized selection gradients wich express the gain in fitnes by standard deviation units of phenotypes, something that allows comparisons across phenotypes and with other studies (Kingsolver et al. 2001). NO need of fitness transformation to relative fitness, it is already implemented in the scripts.
 
 Bibliography
 
