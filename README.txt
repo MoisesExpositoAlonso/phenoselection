@@ -9,7 +9,7 @@ These scripts are free to use, modify and share, as long as this repo is acknowl
 
 If you use this source, please cite it as:
 
-M. Exposito-Alonso (2016). Phenoselection: R scripts implementing phenotype selection gradients and coefficients of Lande & Arnold 1985. DOI:10.5281/zenodo.61194
+M. Exposito-Alonso (2016). Phenoselection: R scripts implementing phenotype selection gradients and coefficients of Lande & Arnold 1985.DOI:dx.doi.org/10.5281/zenodo.61194
 
 ------------------------------------------------------------------------------------------
 
