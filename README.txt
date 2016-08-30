@@ -7,7 +7,13 @@
 
 These scripts are free to use, modify and share, as long as this repo is acknowledged. It comes with no warranty, however, emails with bugs or questions are wellcomed.
 
-This code was used for the analyses in Exposito-Alonso et al. (201X). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
+If you use this source, please cite it as:
+
+M. Exposito-Alonso (2016). Phenoselection: R scripts implementing phenotype selection gradients and coefficients of Lande & Arnold 1985. DOI:10.5281/zenodo.61194
+
+------------------------------------------------------------------------------------------
+
+This code was used for the analyses in Exposito-Alonso et al. (201X, to be published). It is meant for 2 phenotypes and a measure of fitness; although can be extended to a different number of phenotypes with little tuning.
 
 In total, there are seven equations implemented dealing with linear, disruptive, blancing and correlative selection, and, if heritabilities and genetic correlations are provided, response to selection is calculated. Significance values are calculated using bootstrapping.
 
